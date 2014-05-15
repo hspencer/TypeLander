@@ -1,5 +1,10 @@
 # TypeLander
-This is a very simple and small program for typing text in a 3D environment and intended for projection.
+This is a very simple and small program developed in [Processing](http://www.processing.org) for typing text in a 3D environment.
+
+This software is being specially designed for concert performances in [Open City](http://www.amereida.cl)
+
+### Dependencies
+* [Peasy Cam](https://github.com/jdf/peasycam/) Library
 
 ![TypeLander Screenshot](http://cl.ly/image/0u2B461b0K1a/Captura%20de%20pantalla%202014-05-15%20a%20la(s)%208.33.26.PNG "Poem by Blaise Cendrars")
 
