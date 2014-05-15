@@ -18,8 +18,6 @@ void keyReleased() {
       typedText += "\n";
       break;
     case ESC:
-      typedText = "...";
-      break;
     case DELETE:
       break;
     default:

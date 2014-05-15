@@ -33,14 +33,23 @@ void setup() {
 
 void draw() {
   background(backgroundColor);
-  fill(foregroundColor);
+  fill(foregroundColor, foregroundAlpha);
   textFont(font[currentFont], 24);
   text(typedText+(frameCount/10 % 2 == 0 ? "_" : ""), -textWidth/2, -textHeight/2, textWidth/2, textHeight/2);
 
   if (keyPressed) { 
     if (key == ESC) {
-      background(randomColor());
+      fading = true;
       key = ' ';
+    }
+  }
+
+  if (fading) {
+    foregroundAlpha -= 10;
+
+    if (foregroundAlpha <= 5) {
+      fading = false;
+      foregroundAlpha = 255;
       typedText = "";
     }
   }

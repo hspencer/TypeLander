@@ -61,7 +61,7 @@
     <key>JVMOptions</key>
     <array>
             <string>-Xms64m</string>
-      <string>-Xmx1024m</string>
+      <string>-Xmx2048m</string>
 
       <string>-Xdock:icon=Contents/Resources/sketch.icns</string>
       <string>-Dapple.laf.useScreenMenuBar=true</string>
