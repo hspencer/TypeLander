@@ -1,10 +1,10 @@
 /**
  *  
- *  <h1>TypeLander</h1>
- *  para <br>
- *  Ciudad Abierta
- * <pre>
- *                 @hspencer 2014</pre>
+ *  TypeLander
+ *  
+ *  Tipeador para la Ciudad Abierta
+ * 
+ *                   @hspencer 2014
  */
 
 
@@ -19,6 +19,7 @@ void setup() {
   cam.setMinimumDistance(0);
   cam.setMaximumDistance(2500);
 
+  /* familias tipograficas*/
   font[0] = createFont("ChaparralPro-Regular", 32, true);
   font[1] = createFont("GillSans", 32, true);
   font[2] = createFont("Courier", 32, true);
