@@ -1,9 +1,18 @@
 void keyPressed() {
-  if (key==27)
-    key=0;
+
+  if (key == 27) {
+    key = 0;
+    String timeStamp = "saves/txt/"+year()+month()+day()+"-"+hour()+minute()+second();
+    txt = createWriter(timeStamp+".txt");
+    txt.print(typedText);
+    txt.flush();
+    txt.close();
+    saveFrame("saves/img/"+timeStamp+".png");
+  }
 }
 
 void keyReleased() {
+
   if (key != CODED && key != '´' && !tilde) {
     switch(key) {
     case BACKSPACE:

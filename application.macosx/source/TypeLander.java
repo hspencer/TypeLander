@@ -29,7 +29,7 @@ public class TypeLander extends PApplet {
 
 
 PeasyCam cam;
-
+PrintWriter txt;
 
 public void setup() {
   size(windowWidth, windowHeight, P3D);
@@ -52,12 +52,14 @@ public void setup() {
 public void draw() {
   background(backgroundColor);
   fill(foregroundColor, foregroundAlpha);
-  textFont(font[currentFont], 24);
+  textFont(font[currentFont], 32);
   text(typedText+(frameCount/10 % 2 == 0 ? "_" : ""), -textWidth/2, -textHeight/2, textWidth/2, textHeight/2);
 
   if (keyPressed) { 
     if (key == ESC) {
       fading = true;
+      txt.print("\n\n----\n\n");
+      txt.print(typedText);
       key = ' ';
     }
   }
@@ -83,11 +85,20 @@ public void draw() {
 }
 
 public void keyPressed() {
-  if (key==27)
-    key=0;
+
+  if (key == 27) {
+    key = 0;
+    String timeStamp = "saves/txt/"+year()+month()+day()+"-"+hour()+minute()+second();
+    txt = createWriter(timeStamp+".txt");
+    txt.print(typedText);
+    txt.flush();
+    txt.close();
+    saveFrame("saves/img/"+timeStamp+".png");
+  }
 }
 
 public void keyReleased() {
+
   if (key != CODED && key != '\u00b4' && !tilde) {
     switch(key) {
     case BACKSPACE:
@@ -191,6 +202,7 @@ int black            = color(0);
 int backgroundColor  = (int)white;
 int foregroundColor  = (int)black;
 int foregroundAlpha    = 255; 
+
 public int randomColor() {
   int c = color(random(255), random(255), random(255));
   return c;
@@ -202,13 +214,14 @@ String typedText = "TypeLander";
 boolean tilde = false;
 
 /*-------------------- environment */
-int windowWidth = 1024;
-int windowHeight = 768;
+int windowWidth = 1440; // 1024;
+int windowHeight = 900; // 768;
 int currentFont = 0;
 boolean fading = false;
 float textWidth = windowWidth * .5f;
 float textHeight = windowHeight * .8f;
 float margen = 70.0f;
+
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "--full-screen", "--bgcolor=#666666", "--stop-color=#cccccc", "TypeLander" };
     if (passedArgs != null) {

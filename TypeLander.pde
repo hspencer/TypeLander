@@ -11,7 +11,7 @@
 import peasy.*;
 
 PeasyCam cam;
-
+PrintWriter txt;
 
 void setup() {
   size(windowWidth, windowHeight, P3D);
@@ -34,12 +34,14 @@ void setup() {
 void draw() {
   background(backgroundColor);
   fill(foregroundColor, foregroundAlpha);
-  textFont(font[currentFont], 24);
+  textFont(font[currentFont], 32);
   text(typedText+(frameCount/10 % 2 == 0 ? "_" : ""), -textWidth/2, -textHeight/2, textWidth/2, textHeight/2);
 
   if (keyPressed) { 
     if (key == ESC) {
       fading = true;
+      txt.print("\n\n----\n\n");
+      txt.print(typedText);
       key = ' ';
     }
   }
