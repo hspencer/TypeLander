@@ -14,4 +14,4 @@ This software is being specially designed for concert performances in [Open City
 * **scroll (mouse wheel)** → _zoom in/out_
 * **UP / DOWN (arrow keys)** → _change font_
 * **LEFT / RIGHT (arrow keys)** → _change color scheme_
-* **ESC** → _delete all text_
+* **ESC** → _deletes all text, but saves it into a txt file along with a PNG snapshot_
